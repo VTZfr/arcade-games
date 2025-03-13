@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Jeux Arcade</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Mini Jeux Arcade</h1>
+        
+        <div class="leaderboard">
+            <h2>Meilleurs Scores</h2>
+            <div class="leaderboard-content">
+                <div class="game-scores" id="snake-scores">
+                    <h3>Snake</h3>
+                    <ol id="snake-leaderboard"></ol>
+                </div>
+                <div class="game-scores hidden" id="pong-scores">
+                    <h3>Pong</h3>
+                    <ol id="pong-leaderboard"></ol>
+                </div>
+                <div class="game-scores hidden" id="tetris-scores">
+                    <h3>Tetris</h3>
+                    <ol id="tetris-leaderboard"></ol>
+                </div>
+                <div class="game-scores hidden" id="flappy-scores">
+                    <h3>Flappy Bird</h3>
+                    <ol id="flappy-leaderboard"></ol>
+                </div>
+                <div class="game-scores hidden" id="2048-scores">
+                    <h3>2048</h3>
+                    <ol id="2048-leaderboard"></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-selector">
+            <button class="game-btn active" data-game="snake">Snake</button>
+            <button class="game-btn" data-game="pong">Pong</button>
+            <button class="game-btn" data-game="tetris">Tetris</button>
+            <button class="game-btn" data-game="flappy">Flappy Bird</button>
+            <button class="game-btn" data-game="2048">2048</button>
+        </div>
+
+        <div class="game-container" id="snake-game">
+            <canvas id="gameCanvas"></canvas>
+            <div class="overlay">
+                <div class="score-container">
+                    <div class="score">Score: <span id="scoreValue">0</span></div>
+                    <div class="high-score">Meilleur Score: <span id="highScoreValue">0</span></div>
+                </div>
+                <button id="startButton" class="start-button">Commencer le jeu</button>
+            </div>
+        </div>
+
+        <div class="game-container hidden" id="pong-game">
+            <canvas id="pongCanvas"></canvas>
+            <div class="overlay">
+                <div class="score-container">
+                    <div class="score">Joueur 1: <span id="player1Score">0</span></div>
+                    <div class="score">Joueur 2: <span id="player2Score">0</span></div>
+                </div>
+                <button id="pongStartButton" class="start-button">Commencer Pong</button>
+            </div>
+        </div>
+
+        <div class="game-container hidden" id="tetris-game">
+            <canvas id="tetrisCanvas"></canvas>
+            <div class="overlay">
+                <div class="score-container">
+                    <div class="score">Score: <span id="tetrisScore">0</span></div>
+                    <div class="score">Lignes: <span id="tetrisLines">0</span></div>
+                </div>
+                <button id="tetrisStartButton" class="start-button">Commencer Tetris</button>
+            </div>
+        </div>
+
+        <div class="game-container hidden" id="flappy-game">
+            <canvas id="flappyCanvas"></canvas>
+            <div class="overlay">
+                <div class="score-container">
+                    <div class="score">Score: <span id="flappyScore">0</span></div>
+                    <div class="high-score">Meilleur Score: <span id="flappyHighScore">0</span></div>
+                </div>
+                <button id="flappyStartButton" class="start-button">Commencer le jeu</button>
+            </div>
+        </div>
+
+        <div class="game-container hidden" id="2048-game">
+            <canvas id="2048Canvas"></canvas>
+            <div class="overlay">
+                <div class="score-container">
+                    <div class="score">Score: <span id="2048Score">0</span></div>
+                    <div class="high-score">Meilleur Score: <span id="2048HighScore">0</span></div>
+                </div>
+                <button id="2048StartButton" class="start-button">Commencer 2048</button>
+            </div>
+        </div>
+
+        <div class="controls-info" id="snake-controls">
+            <p>Utilisez les flèches du clavier pour jouer</p>
+            <div class="arrows">
+                <div class="arrow">⬆️</div>
+                <div class="arrow-group">
+                    <div class="arrow">⬅️</div>
+                    <div class="arrow">⬇️</div>
+                    <div class="arrow">➡️</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls-info hidden" id="pong-controls">
+            <p>Joueur 1: W (haut) et S (bas)</p>
+            <p>Joueur 2: Flèches haut et bas</p>
+        </div>
+
+        <div class="controls-info hidden" id="tetris-controls">
+            <p>← → : Déplacer</p>
+            <p>↑ : Rotation</p>
+            <p>↓ : Descente rapide</p>
+            <p>Espace : Chute instantanée</p>
+        </div>
+
+        <div class="controls-info hidden" id="flappy-controls">
+            <p>Espace ou Clic pour sauter</p>
+            <p>Évitez les obstacles !</p>
+        </div>
+
+        <div class="controls-info hidden" id="2048-controls">
+            <p>← → ↑ ↓ : Déplacer les tuiles</p>
+            <p>Combinez les nombres identiques pour atteindre 2048 !</p>
+        </div>
+    </div>
+    <script src="snake.js"></script>
+    <script src="pong.js"></script>
+    <script src="tetris.js"></script>
+    <script src="flappy.js"></script>
+    <script src="2048.js"></script>
+    <script src="main.js"></script>
+</body>
+</html> 

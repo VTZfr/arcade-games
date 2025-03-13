@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #1a1a2e, #16213e);
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #4CAF50, #8BC34A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.game-container {
+    position: relative;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+canvas {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.score-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.2rem;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.start-button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background: linear-gradient(45deg, #4CAF50, #8BC34A);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.start-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+
+.start-button.hidden {
+    display: none;
+}
+
+.controls-info {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.arrows {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.arrow-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.arrow {
+    font-size: 1.5rem;
+    padding: 5px;
+}
+
+@keyframes snakeGlow {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(1.2); }
+    100% { filter: brightness(1); }
+}
+
+.game-selector {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.game-btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.game-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.game-btn.active {
+    background: linear-gradient(45deg, #4CAF50, #8BC34A);
+    border-color: transparent;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Styles spécifiques pour Pong */
+#pong-game canvas {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Styles spécifiques pour Tetris */
+#tetris-game canvas {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Ajouter ces styles */
+.leaderboard {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 200px;
+}
+
+.leaderboard h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #4CAF50;
+}
+
+.leaderboard h3 {
+    color: #8BC34A;
+    margin-bottom: 10px;
+}
+
+.leaderboard ol {
+    list-style-position: inside;
+    padding: 0;
+}
+
+.leaderboard li {
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.leaderboard li:last-child {
+    border-bottom: none;
+} 
